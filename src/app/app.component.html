@@ -1,0 +1,21 @@
+<div style="margin-left: 10px;margin-top: 10px;">
+  <img style="margin:auto;display: inline-block;" src="../assets/images/tahaluf-logo.png" height="100" alt="tahaluf-logo">
+</div>
+<div class="file__upload">
+		<div class="header">
+			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load SCORM Zip file</span></p>			
+		</div>
+		<form class="body" #userSignUp="ngForm" (ngSubmit)="uploadFile(scormFile.files)">
+			<input type="file" id="upload" #scormFile (change)="checkFile(scormFile.files)"   accept=".zip,.rar,.7zip" required>
+			<label for="upload">
+				<i class="fa fa-file-text-o fa-3x"></i>
+				<p>
+					<strong>Drag and drop</strong> files here<br>
+					or <span>browse</span> to begin the upload <br>
+          <span style="color: grey;text-decoration: none;font-size: 13px;">*only .rar, .zip files allowed</span><br><br>
+          <button [disabled]="!isValid" type="submit" class="Cbtn btn btn-secondary">Submit</button>
+
+				</p>
+			</label>
+		</form>
+	</div>
